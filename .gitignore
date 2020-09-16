@@ -1,3 +1,4 @@
 node_modules
 charts/laipoc.yaml
+server/certs
 _deps
