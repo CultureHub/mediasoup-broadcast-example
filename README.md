@@ -6,6 +6,17 @@ This project is a vanilla Javascript example of how to use Mediasoup to support 
 
 There are no techniques borrowed from other code, just the docs.  Accordingly, the ISC license (simple, permissive) is used for this code to encourage you to derive your own software from it without legal worries.  Pull requests are welcome!  I don't want to add more features, but polishing and simplifying this example are important to me.  See the [TODO.md](TODO.md) for suggested contributions.
 
+## Notes (ojack)
+To run locally with https on localhost, create a 'certs' folder inside the server folder of this repo. Generate self-signed certs using the following code from https://gist.github.com/cecilemuller/9492b848eb8fe46d462abeb26656c4f8:
+```
+openssl req -x509 -nodes -new -sha256 -days 1024 -newkey rsa:2048 -keyout localhost.key -out localhost.pem -subj "/C=US/CN=Example-Root-CA"
+openssl x509 -outform pem -in localhost.pem -out localhost.crt
+```
+Run using:
+```
+PORT=8080 HTTPS_HOST=localhost node server/index.js
+```
+
 ## Quickstart
 
 For simple tests, run:
